@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hex Code Pixel Art Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>Hex Code Pixel Art Tool</h1>
-    <div class="tools">
-        <input type="color" id="colorPicker" value="#000000">
-        <input type="text" id="hexCode" value="#000000" maxlength="7">
-        <button id="clearCanvas">Clear Canvas</button>
+    <div class="container">
+        <h1>Hex Code Pixel Art Tool</h1>
+        <div class="tools">
+            <div class="color-picker-container">
+                <label for="colorPicker">Select Color:</label>
+                <input type="color" id="colorPicker" value="#000000">
+            </div>
+            <input type="text" id="hexCode" value="#000000" maxlength="7">
+            <button id="clearCanvas">Clear</button>
+            <button id="undoBtn">Undo</button>
+            <button id="redoBtn">Redo</button>
+        </div>
+        <div id="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="info">
+            <h2>What are Hex Codes?</h2>
+            <p>Hex codes are a way of representing colors using a six-digit combination of letters and numbers. They are
+                based on the hexadecimal system, which uses 16 digits (0-9 and A-F). Each pair of digits represents the
+                intensity of red, green, and blue light, respectively.</p>
+            <p>For example:</p>
+            <ul>
+                <li>#FF0000 is <b><span style="color:red">red</span></b> (maximum red, no green or blue)</li>
+                <li>#00FF00 is <b><span style="color:green">green</span></b> (maximum green, no red or blue)</li>
+                <li>#0000FF is <b><span style="color:blue">blue</span></b> (maximum blue, no red or green)</li>
+                <li>#FFFFFF is <b><span style="color:white; background-color: #ccc;">white</span></b> (maximum of all
+                    colors)</li>
+                <li>#000000 is <b><span style="color:black">black</span></b> (absence of all colors)</li>
+            </ul>
+            <p>Experiment! Try entering different hex codes into the box or use the color picker to see how the colors
+                change. You can create your own pixel art by clicking on the grid!</p>
+        </div>
     </div>
-    <canvas id="canvas" width="500" height="500"></canvas>
     <script src="script.js"></script>
-
-    <h1>What are Hex Codes?</h1>
-    
-    <p>Hex codes are a way of representing colors using a six-digit combination of letters and numbers. They are based on the hexadecimal system, which uses 16 digits (0-9 and A-F). Each pair of digits represents the intensity of red, green, and blue light, respectively.
-
-    For example:
-
-    <li>#FF0000 is <b><span style="color:red">red</span></b> (maximum red, no green or blue)</li>
-    <li>#00FF00 is <b><span style="color:green">green</span></b> (maximum green, no red or blue)</li>
-    <li>#0000FF is <b><span style="color:blue">blue</span></b> (maximum blue, no red or green)</li>
-    <li>#FFFFFF is <b><span style="color:white">white</span></b> (maximum of all colors)</li>
-    <li>#000000 is <b><span style="color:black">black</span></b> (absence of all colors)</li>
-    Experiment!
-    Try entering different hex codes into the box and clicking "Update Color" to see how the pixels change. You can create your own pixel art by clicking on the grid!</p>
 </body>
+
 </html>
